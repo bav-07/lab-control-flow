@@ -16,27 +16,15 @@ public class WhatShouldIWear {
             System.out.println("Please provide a valid input in the form of 'sunny', 'cloudy', 'raining' or 'snowing'");
             weather = reader.nextLine();
         }
-        if (weather.toLowerCase().contains("rain")) {
-            weather = "raining";
-        }
-        else if (weather.toLowerCase().contains("sun")) {
-            weather = "sunny";
-        }
-        else if (weather.toLowerCase().contains("snow")) {
-            weather = "snowing";
-        }
-        else {
-            weather = "cloudy";
-        }
 
-        System.out.println("It is " + weather + ".");
+        // Ask the user for the temperature
         System.out.println("What is the average temperature in degrees Celsius? ");
         int temperature = reader.nextInt();
 
-        String fabric;
-        String extras;
         // Inform user on optimal clothing based on the weather
-        if (weather.equalsIgnoreCase("raining")) {
+        if (weather.toLowerCase().contains("rain")) {
+            // If the temperature is less than 12, between 12 and 22, or greater than 22, recommend varying clothing
+            // and print the recommendation
             if (temperature < 12) {
                 System.out.println("Wear a waterproof winter coat");
             }
@@ -47,7 +35,7 @@ public class WhatShouldIWear {
                 System.out.println("Wear a waterproof bomber jacket");
             }
         }
-        else if (weather.equalsIgnoreCase("sunny")) {
+        else if (weather.toLowerCase().contains("sun")) {
             if (temperature < 12) {
                 System.out.println("Wear a duster coat");
             }
@@ -58,7 +46,7 @@ public class WhatShouldIWear {
                 System.out.println("Wear a shirt and shorts");
             }
         }
-        else if (weather.equalsIgnoreCase("snowing")) {
+        else if (weather.toLowerCase().contains("snow")) {
             if (temperature < 12) {
                 System.out.println("Wear a heavy winter coat and snow boots");
             }
