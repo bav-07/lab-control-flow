@@ -33,33 +33,52 @@ public class WhatShouldIWear {
         System.out.println("What is the average temperature in degrees Celsius? ");
         int temperature = reader.nextInt();
 
-        String clothing;
+        String fabric;
+        String extras;
         // Inform user on optimal clothing based on the weather
         if (weather.equalsIgnoreCase("raining")) {
-            clothing = "waterproof coat";
+            if (temperature < 12) {
+                System.out.println("Wear a waterproof winter coat");
+            }
+            else if (temperature < 22) {
+                System.out.println("Wear a waterproof parka");
+            }
+            else {
+                System.out.println("Wear a waterproof bomber jacket");
+            }
         }
         else if (weather.equalsIgnoreCase("sunny")) {
-            clothing = "shirt and shorts";
+            if (temperature < 12) {
+                System.out.println("Wear a duster coat");
+            }
+            else if (temperature < 22) {
+                System.out.println("Wear a sweatshirt and joggers");
+            }
+            else {
+                System.out.println("Wear a shirt and shorts");
+            }
         }
         else if (weather.equalsIgnoreCase("snowing")) {
-
-            clothing = "winter coat";
+            if (temperature < 12) {
+                System.out.println("Wear a heavy winter coat and snow boots");
+            }
+            else if (temperature < 22) {
+                System.out.println("Isn't it too warm for snow? Wear a waterproof parka");
+            }
+            else {
+                System.out.println("Isn't it too warm for snow? Wear a waterproof bomber jacket");
+            }
         }
         else{
-            clothing = "sweater and jeans";
+            if (temperature < 12) {
+                System.out.println("Wear a quilted jacket with thermals");
+            }
+            else if (temperature < 22) {
+                System.out.println("Wear a denim jacket");
+            }
+            else {
+                System.out.println("Wear a lightweight windbreaker");
+            }
         }
-
-        String fabric;
-        if (temperature < 12) {
-            fabric = " thick ";
-        }
-        else if (temperature >=12 && temperature <=22) {
-            fabric = " ";
-        }
-        else {
-            fabric = " lightweight ";
-        }
-
-        System.out.println("Wear a" + fabric + clothing);
     }
 }
