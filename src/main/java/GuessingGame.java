@@ -10,7 +10,8 @@ public class GuessingGame {
         // Initially ask user
         System.out.println("Guess the secret number, between 1 and 100: ");
         Scanner reader = new Scanner(System.in);
-        int userGuess = reader.nextInt();
+        String guess = reader.nextLine();
+        int userGuess = Integer.parseInt(guess);
 
         // If the user guesses right first turn (lucky)
         if (userGuess == randomNumber) {
